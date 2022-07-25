@@ -14,7 +14,7 @@ if (isset($_POST['place_order']) != 0) {
 	$row3 = mysqli_fetch_array($result3);
 
 	do {
-		$cartId = $row3['cart_id'];
+		$cartId = isset($row3['cart_id'])?$row3['cart_id']:10;
 		$query = "INSERT INTO cust_order VALUES('$address',NULL,'$customerId','$cartId')";
 		mysqli_query($conn, $query);
 	} while ($row3 = mysqli_fetch_array($result3));

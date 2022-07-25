@@ -59,11 +59,11 @@ include_once 'connect.php';
 									?>
 								</div>
 								<div class="col-xs-4">
-									<h4 class="product-name"><strong><?php echo "$row[item]"; ?></strong></h4>
+									<h4 class="product-name"> Product Name: <strong><?php echo "$b[product_name]"; ?></strong></h4>
 								</div>
 								<div class="col-xs-6">
 									<div class="col-xs-6 text-right">
-										<h6><strong><?php echo "$row[price]"; ?> <span class="text-muted">&nbsp; &nbsp;</span><?php echo "$row[quantity]"; ?></strong></h6>
+										<h6><strong> Unit Price : <?php echo "$b[unit_price]"; ?> <span class="text-muted">&nbsp; &nbsp;</span>  Qunatity:<?php echo "$row[quantity]"; ?></strong></h6>
 									</div>
 								</div>
 							</div>

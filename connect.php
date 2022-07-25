@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "foodie");
+$conn = mysqli_connect("localhost", "root", "", "dbms");
 if (!$conn) {
 	die("Connection failed: " . mysqli_connect_error());
 }

@@ -11,6 +11,7 @@
 
 <body>
     <?php
+    session_start();
     include "nav.php";
     ?>
     <form action="tracker.php" method="POST">
@@ -23,16 +24,20 @@
 </html>
 
 <?php
-session_start();
+
 include_once 'connect.php';
 if (isset($_POST['track_order']) != 0) {
+    // echo "snef";
     $sql2 = "SELECT * FROM user WHERE username = '$_SESSION[username]'";
+    // echo $sql2;
     $result2 = mysqli_query($conn, $sql2);
     $row2 = mysqli_fetch_array($result2);
-    $customerId = $row2['sl'];
-
+    $customerId = 4;
+    // $customerId = $row2['sl'];
+    // echo $customerId;
     $orderIdSearch = $_POST['order_id'];
     $sql = "SELECT order_id FROM cust_order WHERE customer_id='$customerId'";
+    echo $sql;
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($result);
     $didnt_order = false;
